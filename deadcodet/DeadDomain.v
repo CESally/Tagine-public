@@ -21,7 +21,7 @@ Proof. decide equality. Defined.
 
 
 (* agreement between two values relative to a need *)
-Fixpoint vagree (v w: atom) (x: nval) {struct x}: Prop :=
+Definition vagree (v w: atom) (x: nval) : Prop :=
   match x with
   | Dead => True
   | Live => v = w

@@ -41,5 +41,6 @@ pfrtlgent/Toplevel.v
 deadcodet/DeadDomain.v
 deadcodet/Compiler.v
 pfdeadcodet/MatchingSim.v
+pfdeadcodet/TopLevel.v
 cset/CSETdomain.v
 cset/Compiler.v 
