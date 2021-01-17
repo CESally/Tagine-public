@@ -8,7 +8,6 @@
 -Q deadcodet DeadcodeT
 -Q pfdeadcodet DCTpf
 -Q cset CSET
--Q pfcset CSTpf
 cset/Compiler.v
 cset/CSETdomain.v
 pfdeadcode/MatchingSim.v
