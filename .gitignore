@@ -2,4 +2,3 @@
 *.aux
 *.glob
 *.v.crashcoqide
-Makefile.conf
