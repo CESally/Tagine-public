@@ -20,13 +20,13 @@ Module Import Simulation := MatchingSim.Functor
                               FTags HRules HFlags
                               Tags Rules Lang Sem Flags.
 
-
-Locate program_behaves.
+(* Some commands that may help with understanding the theorem. *)
+(* Locate program_behaves.
 Print  program_behaves.
 Locate behaviour_improves.
 Print  behaviour_improves.
 Locate not_wrong.
-Print  not_wrong.
+Print  not_wrong. *)
 
 Section Proof.
 Variable  prog : Lang.program.

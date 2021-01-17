@@ -28,7 +28,8 @@ Module Import Simulation := RGTpf.Sim.Functor
                       SSem
                       TSem.
 
-Locate match_atom.
+(* Some commands that may help with understanding the theorem. *)
+(* Locate match_atom.
 Print  match_atom.
 Locate match_TagErr.
 Print  match_TagErr.
@@ -37,7 +38,7 @@ Print  program_behaves.
 Locate not_wrong.
 Print  not_wrong.
 Locate behaviour_improves.
-Print  behaviour_improves.
+Print  behaviour_improves. *)
 
 Section Proof.
 Variable  prog: Source.program.
@@ -45,7 +46,7 @@ Variable tprog: Target.program.
 Hypothesis TRANSL: match_prog prog tprog.
 
 Let SrcProg := SSem.HLL_semantics   prog. (* the semantics of HLL (param-ed by prog) *)
-Let TgtProg := TSem.RTLT_semantics tprog.
+Let TgtProg := TSem.RTLT_semantics tprog. (* and similarly for RTLT *)
 
 Theorem Semantic_Preservation_RTLgenT :
   (forall behNW, program_behaves SrcProg behNW -> not_wrong behNW) ->
