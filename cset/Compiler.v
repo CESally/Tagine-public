@@ -3,19 +3,16 @@ From CompCert Require Import Coqlib Maps Lattice Kildall Errors.
 From PIPE     Require Import TagDomain.
 From RTLT     Require Import Language Semantics Policy.
 From RTLgenT  Require Import Inj.
-From RGTpf  Require Import Inj.
+From RGTpf    Require Import Inj.
 From CSET     Require Import CSETdomain.
 
 Import ListNotations.
 
-Module Functor (Export FE_tags: TagDomain.FrontEnd)
-               (Export HLL_rules: HLL.Policy.Sig FE_tags)
-               (Export HLL_flags: HLL.Policy.Props FE_tags HLL_rules)
-               (Export Tags  : MiddleEnd_tagine FE_tags)
-               (Export Rules : RTLT_Policy_Tgn FE_tags Tags HLL_rules HLL_flags)
+Module Functor (Export Tags  : TagDomain.MiddleEnd)
+               (Export Rules : RTLT.Policy.Sig Tags)
                (Export Lang  : RTLT.Language.Sig Tags)
                (Import Sem   : RTLT.Semantics.Sig Tags Rules Lang)
-               (Import Flags : RTLT_Policy_Props_Tgn FE_tags Tags HLL_rules Lang HLL_flags Rules).
+               (Import Flags : RTLT.Policy.Props Tags Lang Rules).
 
 Module Export CSETDom := CSETdomain.Functor Tags Rules Lang Sem.
 
