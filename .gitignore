@@ -2,3 +2,5 @@
 *.aux
 *.glob
 *.v.crashcoqide
+.coqdeps.d
+.lia.cache

@@ -358,7 +358,7 @@ Proof with auto.
   | right ]...
 Qed.
 
-Ltac Lt_state := apply lt_state_intro; simpl; try omega.
+Ltac Lt_state := apply lt_state_intro; simpl; try lia.
 
 Lemma lt_state_trans:
  forall a b c,

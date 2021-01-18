@@ -66,7 +66,7 @@ Inductive comparison : Set :=  (** The standard set of comparisons *)
 (** [eval_comp] "casts" the abstract object level of comparisons into
     Coq [bool]s *)
 Local Open Scope nat_scope.
-Fixpoint eval_comp (comp : comparison) (n m : nat) :=
+Definition eval_comp (comp : comparison) (n m : nat) :=
   match comp with
     | Ceq => n =? m%nat
     | Cne => negb (n =? m)
@@ -103,7 +103,7 @@ Notation "$" := inject.
 
 Inductive MProp (P: Prop) : Type := Know: P -> MProp P | DKnow: MProp P.
 Arguments Know  [_] _.
-Arguments DKnow [_]  .
+Arguments DKnow {_}  .
 Extract Inductive MProp => "bool" [ "true" "false" ].
 
 Definition andPF {P Q:Prop} (x : MProp P) (y : MProp Q) : MProp (P /\ Q) :=

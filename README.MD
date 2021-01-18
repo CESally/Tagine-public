@@ -1,9 +1,9 @@
 This directory contains the codebase of the Tagine prototype compiler as described in CPP '21 Towards Formally Verified Compilation of Tag-Based Policy Enforcement
 
-The project only requires the Coq proof assistant and builds under version 8.10
+The project only requires the Coq proof assistant.
+It is known to build under versions 8.10, 8.10.2 and 8.12.2.
 
-
-
+To build, just type `make`. Warnings about "no common logical root" can be safely ignored.
 
 Architectural notes
 --------------------------------------------------
